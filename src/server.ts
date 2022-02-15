@@ -1,10 +1,10 @@
-import express from 'express';
+import { App } from './App';
 
-const app = express();
-app.get('/', (req, res) => {
-	res.send('Hello World');
-});
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-	console.log(`Server is running in http://localhost:${PORT}`);
+const app: App = new App();
+
+app.init().catch((err: Error) => {
+	console.info('app.init error');
+	console.error(err.name);
+	console.error(err.message);
+	console.error(err.stack);
 });
