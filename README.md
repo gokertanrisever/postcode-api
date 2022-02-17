@@ -37,3 +37,4 @@ npm run test
 ## TODO
 - Add rate limiter
 - API versioning
+- Integrate Swagger
