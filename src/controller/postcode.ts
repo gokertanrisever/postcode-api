@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { parse, Parser } from 'csv-parse';
 import logger from '../common/logger';
-import formidable, { File, Options } from 'formidable';
+import formidable, { Options } from 'formidable';
 import fs from 'fs';
 import { Postcode } from '../models/Postcode';
 import IPostcode from '../interfaces/postcode';
@@ -103,9 +103,7 @@ export const importPostcodes = (req: Request, res: Response, next: NextFunction)
 			next(err);
 			return;
 		}
-
-		logger.debug(files);
-		res.sendStatus(201);
+		res.sendStatus(200);
 	});
 
 	form.on('file', (formname, file) => {

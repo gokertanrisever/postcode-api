@@ -10,7 +10,7 @@ export class PostcodeRoute extends CommonRouteConfig {
 
 	configureRoutes(): express.Application {
 		this.app.route(`/api/healthcheck`).get((req: express.Request, res: express.Response) => {
-			res.status(200);
+			res.sendStatus(200);
 		});
 
 		this.app.get(
