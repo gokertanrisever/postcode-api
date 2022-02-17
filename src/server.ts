@@ -1,10 +1,11 @@
 import { App } from './App';
+import logger from './common/logger';
 
 const app: App = new App();
 
 app.init().catch((err: Error) => {
-	console.info('app.init error');
-	console.error(err.name);
-	console.error(err.message);
-	console.error(err.stack);
+	logger.info('app.init error');
+	logger.error(err.name);
+	logger.error(err.message);
+	logger.error(err.stack);
 });
