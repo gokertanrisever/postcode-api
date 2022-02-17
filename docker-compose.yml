@@ -28,7 +28,7 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_HOST: mongo-database
-      DB_URL: mongodb://${DB_USER}:${DB_PASSWORD}@localhost:27017/?authSource=admin&readPreference=primary&ssl=false
+      DB_URL: mongodb://${DB_USER}:${DB_PASSWORD}@127.0.0.1:27017
       PORT: 3000
     container_name: api
 
