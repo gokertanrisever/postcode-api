@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p .",
-    "start": "npm run build && node dist/server.js",
+    "start": "npm run build && node dist/src/server.js",
     "dev": "npm run build && nodemon index.js",
-    "test": "docker compose up -d && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
+    "test-build": "docker compose up -d --build && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
     "lint": "eslint src/**/*.ts",
     "lint-fix": "eslint --fix src/**/*.ts"
   },

@@ -21,7 +21,7 @@ export default interface IPostcode {
       type: string,
     },
     coordinates: {
-      type: [Number],
+      type: [number],
     },
 		index: string
   }

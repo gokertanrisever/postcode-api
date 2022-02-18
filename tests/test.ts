@@ -11,6 +11,7 @@ describe('/healthcheck', () => {
 		chai.request('http://localhost:3000/api')
 			.get('/healthcheck')
 			.end((err, res) => {
+        if (err) throw err;
 				res.should.have.status(200);
         done();
 			});
@@ -24,6 +25,7 @@ describe('/import', () => {
       .set('Content-Type', 'multipart/form-data')
       .attach('file', fs.readFileSync(path.resolve('./tests/test.csv')), 'test.csv')
       .end((err, res) => {
+        if (err) throw err;
         res.should.have.status(200);
         done();
       });
@@ -40,6 +42,7 @@ describe('/search', () => {
         radius: '10',
       })
       .end((err, res) => {
+        if (err) throw err;
         res.should.have.status(200);
         should.exist(res.body);
         res.body.should.be.a('array');

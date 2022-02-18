@@ -29,9 +29,14 @@ You can test it at [http://localhost:3000](http://localhost:3000)
 ```
 
 ## Testing
-This command will start docker containers and run tests
+This command will run tests if docker containers are already up
 ```bash
 npm run test
+```
+
+To start docker containers and run tests:
+```bash
+npm run test-build
 ```
 
 ## TODO

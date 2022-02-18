@@ -9,7 +9,7 @@ export class PostcodeRoute extends CommonRouteConfig {
 	}
 
 	configureRoutes(): express.Application {
-		this.app.route(`/api/healthcheck`).get((req: express.Request, res: express.Response) => {
+		this.app.get(`/api/healthcheck`, (req: express.Request, res: express.Response) => {
 			res.sendStatus(200);
 		});
 
@@ -39,7 +39,7 @@ export class PostcodeRoute extends CommonRouteConfig {
 			}),
 			postcodeController.search,
 		);
-		this.app.route('/api/import').post(postcodeController.importPostcodes);
+		this.app.post('/api/import', postcodeController.importPostcodes);
 
 		return this.app;
 	}
