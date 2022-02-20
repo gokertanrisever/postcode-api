@@ -9,7 +9,7 @@ Rename `.env.example` file to `.env`
 
 Running docker compose will create API and MongoDB instances
 ```basah
-docker-compose up
+docker compose up
 ```
 
 You can test it at [http://localhost:3000](http://localhost:3000)
